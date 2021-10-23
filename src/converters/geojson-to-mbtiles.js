@@ -3,9 +3,9 @@ const QueryStream = require('pg-query-stream');
 const JSONStream = require('JSONStream');
 const fs = require('fs');
 const path = require('path');
-const fileExist = require('../helpers/file_exists');
+const fileExist = require('../utils/file-exist');
 const exec = require('../helpers/execCommand');
-const dirCreate = require('../helpers/dir_exists');
+const dirCreate = require('../utils/dir_exists');
 require('dotenv').config()
 
 class geojsonMbtiles {

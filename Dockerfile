@@ -18,6 +18,7 @@ RUN cd /tmp/tippecanoe-src && make -j && make install
 WORKDIR /app
 ADD . /app
 RUN npm install
+RUN npm install gdal-next --build-from-source --shared_gdal
 
 #CLEAN INSTALATIONS
 RUN rm -rf /tmp/tippecanoe-src \

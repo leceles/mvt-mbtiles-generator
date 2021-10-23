@@ -2,8 +2,8 @@ const geojsonUtil = require("../helpers/geojson_utils");
 var geojsonMerge = require('@mapbox/geojson-merge');
 const path = require("path")
 const fs = require("fs");
-const file_exists = require("../helpers/file_exists");
-const geojsonMbtiles = require("../converters/geojson-mbtiles");
+const file_exists = require("../utils/file-exist");
+const geojsonMbtiles = require("../converters/geojson-to-mbtiles");
 
 const main = async function(){
     console.log('START-----------------')

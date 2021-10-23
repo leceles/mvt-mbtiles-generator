@@ -2,7 +2,7 @@
     {
         "name":"temperatura",
         "enable":true,
-        "strategy":[
+        "strategies":[
             { "driver":"vector-raster-vector-tile",
                "options":{
                     "optimizeOriginal":false,
@@ -26,7 +26,7 @@
     },
     {
         "name":"uso_cobertura_terra",
-        "strategy":[
+        "strategies":[
             { "driver":"vector-raster-vector-tile",
                "options":{
                     "optimizeOriginal":false,

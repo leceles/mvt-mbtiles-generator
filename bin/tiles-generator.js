@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-require('dotenv').config()
-require('module-alias/register')
+require('../src/bootstrap')
+
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv
-const fileExist = require('../src/helpers/file_exists')
+const fileExist = require('../src/utils/file-exist')
 
 const usage = `tiles-generator [-c configFile] [-l layersNameToProcess]`
 if (argv.help) {

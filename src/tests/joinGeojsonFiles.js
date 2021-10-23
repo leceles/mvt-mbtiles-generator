@@ -1,7 +1,7 @@
 const geojsonUtil = require("../helpers/geojson_utils");
 const path = require("path")
 const fs = require("fs");
-const file_exists = require("../helpers/file_exists");
+const file_exists = require("../utils/file_exists");
 
 const main = async function(){
     console.log('START-----------------')

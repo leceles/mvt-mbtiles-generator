@@ -1,4 +1,4 @@
-const fileExist = require('../helpers/file_exists');
+const fileExist = require('../utils/file-exist');
 var geojsonExtent = require('@mapbox/geojson-extent');
 var path = require('path');
 var rw = require('rw');
@@ -10,7 +10,7 @@ const geojsonStream = require('geojson-stream');
 const lodash = require('lodash');
 // var es = require('event-stream')
 const exec = require('./execCommand');
-const file_exists = require('../helpers/file_exists');
+const file_exists = require('../utils/file-exist');
 const detourStream = require('detour-stream')
 
 module.exports = class geojsonUtil {

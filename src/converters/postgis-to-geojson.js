@@ -3,8 +3,8 @@ const QueryStream = require('pg-query-stream');
 const JSONStream = require('JSONStream');
 const fs = require('fs');
 const path = require('path');
-const fileExist = require('../helpers/file_exists');
-const dirCreate = require('../helpers/dir_exists');
+const fileExist = require('../utils/file-exist');
+const dirCreate = require('../utils/dir_exists');
 const geojsonUtils = require('../helpers/geojson_utils');
 var rw = require('rw');
 
