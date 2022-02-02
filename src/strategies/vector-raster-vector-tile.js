@@ -22,13 +22,13 @@ module.exports = class vectorRasterVector extends EventEmitter {
     this.running = false
     this._currentStep = null
     this._currentStepIndex = 0
-    this.cancel = false
+    this._cancel = false
     this.error = null
     this._dataDirectory = dataDir
     this._dataDirectoryTemp = path.resolve(dataDir, '/tmp/', layerConfig.name, '/')
     this._steps = this._createSteps()
 
-    this.on('cancel', this.cancel())
+    this.on('cancel', this.cancel)
   }
 
   async _createSteps () {
@@ -101,28 +101,28 @@ module.exports = class vectorRasterVector extends EventEmitter {
     this.runSteps()
   }
 
-  async runSteps(){
+  async runSteps () {
     const step = this.currentStep
-    if(!step) this.finish()
+    if (!step) this.finish()
 
     this.executeStep(step)
-    step.on('start', e=> console.log('executando'))
-    step.on('progress', e=> console.log('executando'))
+    step.on('start', e => console.log('executando'))
+    step.on('progress', e => console.log('executando'))
     step.on('error', e => console.log('executando'))
     step.on('finish', e => {
-       console.log('executando')
-     }  
+      console.log('executando')
+    }
     )
   }
 
-  executeStep(step){
-      //check if method exist
+  executeStep (step) {
+    // check if method exist
 
-      // check with we have the need input
+    // check with we have the need input
 
-      //call methodo or methods dependes on the input format
+    // call methodo or methods dependes on the input format
 
-            // emmit events
+    // emmit events
   }
 
   get nextStep () {
@@ -133,8 +133,9 @@ module.exports = class vectorRasterVector extends EventEmitter {
   get currentStep () {
     return this._steps?.[this._currentStepIndex]
   }
-  set currentStep () {
 
+  set currentStep (n) {
+    this._steps.push(n)
   }
 
   get steps () {
@@ -148,8 +149,9 @@ module.exports = class vectorRasterVector extends EventEmitter {
   }
 
   cancel () {
-
+    this._cancel = true
   }
+
   finish () {
 
   }
